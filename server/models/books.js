@@ -1,3 +1,6 @@
+/*books.js
+ Nidhi Trivedi , 301172350 , 01/03/2021*/
+//books model
 let mongoose = require('mongoose');
 
 // create a model class
