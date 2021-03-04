@@ -8,7 +8,6 @@
       <!-- ------------------------ -->
       <!-- FIX THE ADD BUTTON BELOW -->
       <div class="addbtn" style="height: 5%; padding-bottom: 25px">
-        <!-- ------------------------ -->
         <a href="/books/add" class="btn btn-primary"
           ><i class="fa fa-plus"></i> Add a book</a
         >
@@ -27,6 +26,17 @@
                 </tr>
               </thead>
               <tbody>
+                <% if(books.length===0) {%>
+                  <tr>
+                    <td
+                      colspan="6"
+                      style="text-align: center; font-weight: bold; font-size: medium"
+                    >
+                      No Data Available!
+                    </td>
+                  </tr>
+                  <%}else {%> 
+                  
                 <!-- Template Row -->
                 <% for (let count = 0; count < books.length; count++) { %>
                 <tr>
@@ -40,9 +50,8 @@
                   <td class="text-center" style="vertical-align: inherit" r>
                     <%= books[count].Genre %>
                   </td>
-
+                   <!-- ADD the EDIT BUTTON HERE -->
                   <td class="text-center">
-                    <!-- ADD the EDIT BUTTON HERE -->
                     <a
                       href="/books/edit/<%= books[count]._id %>"
                       class="btn btn-sm"
@@ -50,9 +59,8 @@
                       Edit
                     </a>
                   </td>
-
+                   <!-- ADD the DELETE BUTTON HERE -->
                   <td class="text-center">
-                    <!-- ADD the DELETE BUTTON HERE -->
                     <a
                       href="/books/delete/<%= books[count]._id %>"
                       class="btn btn-sm"
@@ -61,7 +69,7 @@
                     </a>
                   </td>
                 </tr>
-                <% } %>
+                <% } %> <% } %>
               </tbody>
             </table>
           </div>
